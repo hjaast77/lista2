@@ -2,29 +2,20 @@
 // eslint-disable-next-line react/prop-types
 export default function TaskItem({ item, onDeleteItem, onToggleItem }) {
   const handleDeleteClick = (e) => {
-    e.preventDefault(); // Evitar recarga de la página
+    e.preventDefault();
     onDeleteItem(item.id);
   };
   return (
     <div className="list-item">
-      <span
-        style={
-          item.terminada
-            ? {
-                textDecorationThickness: "2px",
-                textDecorationColor: "#C30000",
-              }
-            : {}
-        }
-      >
+      <span>
         <input
           type="checkbox"
           checked={item.terminada}
-          onChange={() => onToggleItem(item.id)}
-        />{" "}
+          onClick={() => onToggleItem(item.id)}
+        />
         {item.description}
       </span>
-      <a href="#" onClick={handleDeleteClick}>
+      <a href="" onClick={handleDeleteClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="icon icon-tabler icon-tabler-x"

@@ -26,7 +26,7 @@ body {
 
 .app {
   color: #ffffffb0;
-  background-color: #ffffff21;
+  background-color: #ffffff20;
   width: var(--app-width);
   border-radius: var(--radius);
   padding: 2rem;
@@ -95,6 +95,8 @@ input[type="text"]::placeholder {
 .completas .list-item {
   background-color: #74c674;
   text-decoration: line-through;
+  text-decoration-thickness: "2px";
+  text-decoration-color: "#C30000";
 }
 
 .titulo-completas {

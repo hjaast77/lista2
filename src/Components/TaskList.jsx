@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import Confetti from "react-confetti";
 import TaskItem from "./TaskItem";
 
 export default function TaskList({
@@ -51,7 +51,7 @@ export default function TaskList({
           </>
         )}
       </div>
-      <div className="footer">
+      <div className="footer" style={{ textAlign: "center" }}>
         <em>
           {items.length === 0
             ? "Tu lista está vacía"
@@ -60,6 +60,14 @@ export default function TaskList({
             : `Tu lista tiene ${numItems} tareas y has completado ${numTerminadas} (
         ${porcentaje}%)`}
         </em>
+        {porcentaje === 100 && (
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            numberOfPieces={200}
+            recycle={true}
+          />
+        )}
       </div>
     </>
   );

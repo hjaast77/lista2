@@ -32,12 +32,6 @@ export default function BasicMenu({ onClearList, onSortByChange }) {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        style={{
-          fontFamily: "poppins",
-          color: "#ffffffb0",
-          fontSize: "20px",
-          padding: "0",
-        }}
       >
         <div className="menu-puntitos">
           <div className="dot"></div>

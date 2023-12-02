@@ -38,24 +38,30 @@ export default function App() {
     });
   }
   const handleSortByChange = (newSortBy) => {
+    //Actualiza el State de ordenamiento desde el componente Menu
     setSortBy(newSortBy);
   };
 
   function handleDeleteItem(id) {
-    // Actualizo el estado y filtro los elementos
-    setItems((items) => items.filter((item) => item.id !== id));
+    //actualiza el estado de la lista de tareas desde el componente TaskItem (borra elemento)
+    setItems((prevItems) => {
+      const updatedItems = prevItems.filter((item) => item.id !== id);
+      return updatedItems;
+    });
   }
 
   function handleToggleItem(id) {
-    // Actualizo el estado y cambio el estado a "terminada"
-    setItems((items) =>
-      items.map((item) =>
+    //actualiza el estado de la lista de tareas desde el componente TaskItem (marca completa/incompleta)
+    setItems((prevItems) => {
+      const updatedItems = prevItems.map((item) =>
         item.id === id ? { ...item, terminada: !item.terminada } : item
-      )
-    );
+      );
+      return updatedItems;
+    });
   }
 
   function handleClearList() {
+    //setea el array de tareas = []
     const confirmed = window.confirm(
       "Estás seguro de querer borrar toda la lista?"
     );
